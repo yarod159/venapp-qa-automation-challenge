@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "cy:open": "cypress open"
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "cy:firefox":"cypress run --browser firefox"
+   
   },
   "author": "Asdrubal Morales",
   "license": "ISC",

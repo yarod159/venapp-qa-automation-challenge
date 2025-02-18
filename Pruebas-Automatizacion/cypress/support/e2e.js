@@ -15,3 +15,12 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
+import 'cypress-mochawesome-reporter/register';
+
+Cypress.on('uncaught:exception', (err, runnable) => {
+    // Ignorar errores relacionados con Service Workers
+    if (err.message.includes("Failed to update the ServiceWorker")) {
+      return false; // Evita que Cypress falle por este error
+    }
+    return true; // Para otros errores, deja que Cypress los maneje normalmente
+  });
