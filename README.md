@@ -3,7 +3,9 @@
 
 ## Descripción del Proyecto
 
-Este proyecto contiene pruebas automatizadas para el sitio web **venapp.com** utilizando **Cypress** y pruebas de rendimiento con **K6**. Además, se ha implementado **Mochawesome** para la generación de reportes detallados de ejecución de pruebas.
+Este proyecto contiene pruebas automatizadas para el sitio web **venapp.com** utilizando **Cypress** y
+ pruebas de rendimiento con **K6**. Además, se ha implementado **Mochawesome**
+para la generación de reportes detallados de ejecución de pruebas.
 
 ## Tecnologías Utilizadas
 
@@ -69,10 +71,54 @@ despues ir a la carpeta de reports>html> presionar click derecho en index.html "
 
 ### 3. Pruebas de Rendimiento con K6
 
-Para ejecutar el test de carga definido:
+Descarga el instalador de K6 desde Chocolatey.
+
+- [Chocolatey](https://chocolatey.org/install)
+
+- Verificar la version en terminal con
 
 ```sh
-k6 run tests/performance-test.js
+k6 version
 ```
 
 
+#  Ejecución del Programa
+
+Para correr el programa, sigue estos pasos:
+
+## 1️ Ubicarte en la Carpeta del Código
+
+Asegúrate de estar en la carpeta donde se encuentra el código. Para ello, usa el siguiente comando en la terminal:
+
+ejemplo:
+```bash
+cd ruta/del/proyecto
+```
+
+2️ Obtener la API_KEY_K6
+Para ejecutar K6 correctamente, necesitas obtener la API_KEY_K6 siguiendo estos pasos:
+
+Abre el navegador y accede al login.
+
+Activa las herramientas de desarrollador (DevTools) presionando F12 o Ctrl + Shift + I.
+
+Dirígete a la pestaña "Network" y asegúrate de que la captura de red esté activada.
+
+Ingresa un correo y contraseña incorrectos y envía la solicitud.
+
+Busca el endpoint llamado accounts:signInWithPassword.
+
+Dentro del "Payload", encontrarás la API_KEY.
+
+Cópiala y utilízala en la configuración de K6.
+
+🔹 ¡Listo! Ahora puedes ejecutar K6 sin problemas 🚀.
+
+
+Pegar este formato ENV en el terminarl para correr el programa debes llenarlos con tus datos  
+```sh
+$env:API_KEY_K6=" your_api_key "
+$env:EMAIL_K6="test@exampl.com"
+$env:PASSWORD_K6="password123"
+k6 run main.js
+```
